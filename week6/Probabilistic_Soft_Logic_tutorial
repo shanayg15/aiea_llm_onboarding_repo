@@ -1,0 +1,42 @@
+# Java
+(Java version 7 or 8 is recommended, although PSL often works on newer versions).
+
+# Git Repository
+Git has a feature for cloning repositories.
+
+Clone the several PSL examples inside repository.
+
+git clone https://github.com/linqs/psl-examples.git
+
+Or get the ZIP file from off of the GitHub page.
+
+# Running a Basic Example
+Go to a basic example, like the simple-acquaintances directory:
+
+cd into psl-examples/simple-acquaintances/cli.
+
+Each such example includes such a run.sh script that handles specific dependencies.
+
+./run.sh
+
+This fetches the PSL jar automatically.
+
+Modify PSL versions that are located at the top of run.sh, if adjustment is needed.
+
+Following running, inferred predicate values show in that inferred-predicates folder (for example, KNOWS.txt).
+
+Various evaluation metrics appear in the console (accuracy, F1, and so on).
+
+# Model File (.psl)
+Contains within it logical rules, each with weights. Example snippet:
+
+20: Lived(P1, L) & Lived(P2, L) & (P1 != P2) -> Knows(P1, P2) to the power of 2
+
+# Data File (.data)
+Defines open vs. Limited predicates with references toward specific data files.
+
+Lists many observations, targets, and ground truth for evaluation.
+
+Adjust rules with custom predicates, or point toward data files.
+
+For more advanced usage, consult the PSL Documentation.
