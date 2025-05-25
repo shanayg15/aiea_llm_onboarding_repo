@@ -1,0 +1,37 @@
+Backward Chaining using Python
+This repository contains a straightforward backward chaining engine written in Python. It applies Horn‑style rules and facts to find the answers to queries by starting with the goal and moving back to the supporting facts.
+Overview
+Backward chaining begins by selecting a query and looking for rules whose conclusions are the same as the query. After that, it attempts to prove the premises of every rule in the same way, going on until it either finds known facts or fails. Experts in the field often apply this reasoning in expert systems, diagnostic tools and logic programming.
+
+Features
+Implementation that requires only a single file and no other dependencies
+Support for variables, constants, predicates and Horn rules is included.
+The process of standard unification takes place with occurs‑check.
+Automatically changing variable names (with standardize‑apart) to prevent conflicts
+It is simple to add your own information and rules.
+
+Requirements
+The latest version of Python 3.6 or a newer version
+All code is written from scratch.
+
+What Happens
+
+Data Structures
+Var: A logic variable is represented by Var (for example, X).
+Const: Stands for a constant symbol (e.g. john).
+A predicate has a name and is made up of a list of terms (variables or constants).
+A Horn‑style rule has zero or more premises and just one conclusion.
+Unification
+The purpose of unify(x, y, θ) is to see if two terms or predicates can be matched under the current substitution map θ. It handles:
+Cases in which a variable is paired with another variable and cases in which a variable is paired with a term
+Predicate heads and the arguments they take
+Occurs‑check is used to prevent loops that never end.
+Standardize‑Apart
+Renaming all the variables is done before applying any rule. It prevents variables from different rules from becoming mixed up.
+
+Backward Chaining
+
+The bc_or(kb, goal, θ) function searches for rules that end with goal.
+If there are no premises in a rule, it is a fact and gives a solution.
+If not, it proves each premise under the current substitution by calling bc_and(...).
+bc_and(kb, goals, θ) checks each subgoal in turn, passing substitutions through as it does so.At the end, personalize your knowledge base.
