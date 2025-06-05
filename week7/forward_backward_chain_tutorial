@@ -17,9 +17,9 @@ All code is written from scratch.
 What Happens
 
 Data Structures
-Var: A logic variable is represented by Var (for example, X).
-Const: Stands for a constant symbol (e.g. john).
-A predicate has a name and is made up of a list of terms (variables or constants).
+Var: A logic variable is represented by Var 
+Const: Stands for a constant symbol
+A predicate has a name and is made up of a list of terms (variables or constants)
 A Horn‑style rule has zero or more premises and just one conclusion.
 Unification
 The purpose of unify(x, y, θ) is to see if two terms or predicates can be matched under the current substitution map θ. It handles:
@@ -27,7 +27,7 @@ Cases in which a variable is paired with another variable and cases in which a v
 Predicate heads and the arguments they take
 Occurs‑check is used to prevent loops that never end.
 Standardize‑Apart
-Renaming all the variables is done before applying any rule. It prevents variables from different rules from becoming mixed up.
+Renaming all the variables is done before applying any rule. It prevents variables from different rules from becoming mixed up
 
 Backward Chaining
 
